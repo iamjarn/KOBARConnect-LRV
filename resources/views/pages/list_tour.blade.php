@@ -81,7 +81,10 @@
                                                                 </div>
                                                                 <!--end::Title-->
                                                             <!--begin::Desc-->
-                                                            <p>{{$data[$index_item]->description ?? "kosong"}}</p>
+                                                            <p style=" -webkit-line-clamp: 5;
+                                                            display: -webkit-box;
+                                                            -webkit-box-orient: vertical;
+                                                            overflow: hidden;">{{$data[$index_item]->description ?? "kosong"}}</p>
                                                             <!--end::Desc-->
                                                             <a href="{{route('edit_tour', ['id' => $data[$index_item]->id])}}" class="btn btn-block btn-sm btn-light-success font-weight-bolder text-uppercase py-4">Detail Wisata</a>
                                                             <button id="btn_delete_{{$data[$index_item]->id}}" onclick="deleteItem()"  class="btn btn-block btn-sm btn-light-danger font-weight-bolder text-uppercase py-4">Delete Wisata</button>

@@ -37,4 +37,10 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route("login");
     }
+    public function init(){
+        if(Auth::check()){
+            return redirect('tours');
+        }
+        return redirect()->route("login");
+    }
 }
