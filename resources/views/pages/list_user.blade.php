@@ -15,8 +15,8 @@
     <div class="card card-custom">
         <div class="card-header flex-wrap border-0 pt-6 pb-0">
             <div class="card-title">
-                <h3 class="card-label">Daftar User
-                    <div class="text-muted pt-2 font-size-sm">Daftar semua user yang terdaftar pada sistem</div>
+                <h3 class="card-label">This is our administrators
+                    <div class="text-muted pt-2 font-size-sm">Berikut adalah administrator yang terdaftar dalam pengaturan konten untuk aplikasi ini</div>
                 </h3>
             </div>
             <div class="card-toolbar">

@@ -5,8 +5,8 @@
     <div class="{{ Metronic::printClasses('footer-container', false) }} d-flex flex-column flex-md-row align-items-center justify-content-between">
         {{-- Copyright --}}
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted font-weight-bold mr-2">{{ date("Y") }} &copy;</span>
-            <a href="https://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
+        <a>DINAS PARIWISATA KOTAWARINGIN BARAT  &copy; {{ date("Y") }}</a><br>
+        <a>Powered by <a href="https://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
         </div>
 
         {{-- Nav --}}

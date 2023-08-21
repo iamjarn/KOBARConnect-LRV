@@ -16,8 +16,8 @@
     <div class="card card-custom">
         <div class="card-header flex-wrap border-0 pt-6 pb-0">
             <div class="card-title">
-                <h3 class="card-label">{{ $page_type == "CREATE" ? 'Buat Tour' : 'Edit Tour' }}
-                    <div class="text-muted pt-2 font-size-sm">{{ $page_type == "CREATE" ? 'Buat Tour Baru' : 'Ubah Tour' }}</div>
+                <h3 class="card-label">{{ $page_type == "CREATE" ? 'Buat Data Lokasi' : 'Edit Data Lokasi' }}
+                    <div class="text-muted pt-2 font-size-sm">{{ $page_type == "CREATE" ? 'Lokasi apa yang ingin Anda tambahkan?' : 'Di bagian mana yang ingin Anda perbarui?' }}</div>
                 </h3>
             </div>
         </div>

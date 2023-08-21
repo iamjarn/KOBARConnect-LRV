@@ -26,7 +26,7 @@ Route::group([
     // -------------------------------------------------------
     // User
     // -------------------------------------------------------
-    Route::get("users", "UserController@index");
+    Route::get("users", "UserController@index")->name("index");
     Route::get("get_users", "UserController@get_users");
     Route::get("logout", "AuthController@logout");
     Route::post("create_user", "UserController@create_user")->name("create_user");

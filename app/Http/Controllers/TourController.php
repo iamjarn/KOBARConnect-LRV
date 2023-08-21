@@ -35,8 +35,8 @@ class TourController extends Controller
         $keyword = $request->get("keyword");
         $category = $request->get("category");
 
-        $page_title = 'List Tour';
-        $page_description = 'This is KTdatatables test page';
+        $page_title = 'Tour Places in KOBAR';
+        $page_description = 'Berikut adalah daftar wisata yang terdata di dalam aplikasi KOBAR Connect';
         $data = TourPlace::with(["category"])
                 ->where(function($query) use($keyword, $category){
                     if(!is_null($keyword)){
@@ -63,6 +63,7 @@ class TourController extends Controller
         $page_type = isset($id) ? "EDIT" : "CREATE" ;
         $categories = Category::pluck("name", "id");
         $image_count = 5;
+        $page_title = isset($id) ? "Edit Data Lokasi" : "Buat Data Lokasi";
 
         $data = null;
         if(isset($id)){
@@ -73,7 +74,8 @@ class TourController extends Controller
             "categories",
             "page_type",
             "data",
-            "image_count"
+            "image_count",
+            "page_title"
         ));
     }
 
@@ -96,7 +98,7 @@ class TourController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required|max:10000',
             'latitude' => 'nullable|numeric|between:-999.9999999999,999.9999999999',
             'longitude' => 'nullable|numeric|between:-999.9999999999,999.9999999999',
             'id_category' => 'required|exists:category,id',
@@ -191,7 +193,7 @@ class TourController extends Controller
             }
             DB::commit();
             return redirect()->route('tours')->with([
-                "success" => "Success Buat Wisata"
+                "success" => "Data baru telah ditambahkan!"
             ]);
 
         } catch (\Exception $th) {
@@ -206,8 +208,8 @@ class TourController extends Controller
 
     public function index_category()
     {
-        $page_title = 'List Category';
-        $page_description = 'This is KTdatatables test page';
+        $page_title = 'Tour Categories in KOBAR';
+        $page_description = 'Berikut adalah kategori wisata yang terdata dalam KOBAR Connect';
 
         return view('pages.tours.list_category', compact('page_title', 'page_description'));
     }
@@ -217,7 +219,7 @@ class TourController extends Controller
         $pagination = $request->get("pagination");
         $limit = $pagination["perpage"] ?? 10;
         $current_page = $pagination["page"];
-        $total_page = $pagination["pages"];
+        $total_page = $pagination["page"];
 
         $total_data = Category::count();
         $categories = Category::skip(($current_page - 1 ) * $limit)->take($limit)->get([
@@ -299,8 +301,8 @@ class TourController extends Controller
 
     public function logs()
     {
-        $page_title = 'List log activity';
-        $page_description = 'This is KTdatatables test page';
+        $page_title = 'Admin Logs in KOBAR';
+        $page_description = 'Berikut log aktivitas yang dilakukan administrator KOBAR Connect dalam mengatur konten aplikasi ini';
 
         return view('pages.log_activity', compact('page_title', 'page_description'));
     }
@@ -335,7 +337,7 @@ class TourController extends Controller
     // ===================================
     // API
     // ===================================
-
+    
     public function tours(Request $request){
         $page = $request->get("page") ?? 0;
         $limit = 10;
@@ -396,7 +398,7 @@ class TourController extends Controller
             'identity_number' => 'required|string|max:200',
             'email' => 'required|email|string|max:200',
             'phone_number' => 'required|string|numeric',
-            'address' => 'required|string|max:200',
+            'address' => 'required|string|max:1000',
         ]);
 
         if ($validator->fails()) {

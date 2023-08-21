@@ -19,8 +19,8 @@ class ContentController extends Controller
     public function index(Request $request)
     {
 
-        $page_title = 'List Content';
-        $page_description = 'This is KTdatatables test page';
+        $page_title = 'Header Contents of KOBAR Connect';
+        $page_description = 'Berikut adalah ragam konten untuk ditampilkan sebagai header di aplikasi KOBAR Content';
         $data = Content::orderBy("order", "asc")->paginate(12);
 
         return view('pages.content.list_content', compact(
@@ -39,7 +39,7 @@ class ContentController extends Controller
         }
         $validated = $request->validate([
             'message' => 'required|string|max:255',
-            'file' => $file_validation.'|mimes:jpg,jpeg,png,mp4|max:5120',
+            'file' => $file_validation.'|mimes:jpg,jpeg,png,mp4|max:20000',
         ]);
 
 

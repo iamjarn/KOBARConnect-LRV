@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-md-4 my-2 my-md-0">
                                 <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">Category:</label>
+                                    <label class="mr-3 mb-0 d-none d-md-block">Kategori</label>
                                     <select class="form-control select2" id="select_category">
                                         <option value="">Semua</option>
                                         @foreach($categories as $id => $value)
@@ -32,9 +32,9 @@
                                     </select>
                                 </div>
                             </div>
-                            <button id="btn_search" class="btn btn-light-primary px-6 font-weight-bold">Search</button>
+                            <button id="btn_search" class="btn btn-light-primary px-6 font-weight-bold">Telusuri</button>
                             <div class="ml-5">
-                                <a href="{{route('create_tour')}}" class="btn btn-light-success px-6 font-weight-bold">Buat Baru</a>
+                                <a href="{{route('create_tour')}}" class="btn btn-light-success px-6 font-weight-bold">Buat Lokasi Baru</a>
                             </div>
                         </div>
                     </div>
@@ -86,8 +86,8 @@
                                                             -webkit-box-orient: vertical;
                                                             overflow: hidden;">{{$data[$index_item]->description ?? "kosong"}}</p>
                                                             <!--end::Desc-->
-                                                            <a href="{{route('edit_tour', ['id' => $data[$index_item]->id])}}" class="btn btn-block btn-sm btn-light-success font-weight-bolder text-uppercase py-4">Detail Wisata</a>
-                                                            <button id="btn_delete_{{$data[$index_item]->id}}" onclick="deleteItem()"  class="btn btn-block btn-sm btn-light-danger font-weight-bolder text-uppercase py-4">Delete Wisata</button>
+                                                            <a href="{{route('edit_tour', ['id' => $data[$index_item]->id])}}" class="btn btn-block btn-sm btn-light-success font-weight-bolder text-uppercase py-4">Edit Data Lokasi</a>
+                                                            <button id="btn_delete_{{$data[$index_item]->id}}" onclick="deleteItem()"  class="btn btn-block btn-sm btn-light-danger font-weight-bolder text-uppercase py-4">Hapus Data Lokasi</button>
                                                         </div>
                                                         <!--end::Body-->
                                                     </div>
@@ -181,11 +181,11 @@
             var id = el_id.replace("btn_delete_", "");
 
             Swal.fire({
-                title: "Are you sure?",
+                title: "Yakin Anda ingin menghapusnya?",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel!",
+                confirmButtonText: "Ya!",
+                cancelButtonText: "Tidak!",
                 reverseButtons: true
             }).then(function(result) {
                 if (result.value) {

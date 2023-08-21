@@ -9,8 +9,8 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $page_title = 'List Transaction';
-        $page_description = 'This is transaction list page';
+        $page_title = 'User Transaction List in KOBAR Connect';
+        $page_description = 'Berikut adalah daftar transaksi user yang melakukan pemesanan online di aplikasi KOBAR Connect';
 
         return view('pages.transaction.list_transaction', compact('page_title', 'page_description'));
     }
@@ -19,10 +19,10 @@ class TransactionController extends Controller
         $pagination = $request->get("pagination");
         $limit = $pagination["perpage"] ?? 10;
         $current_page = $pagination["page"];
-        $total_page = $pagination["pages"];
+        $total_page = $pagination["page"];
         $sort_object = $request->get("sort");
 
-        $sort = $sort_object["sort"] ?? 'desc';
+        $sort = $sort_object["sort"] ?? 'asc';
         $field = $sort_object["field"] ?? 'created_at';
 
         // filter

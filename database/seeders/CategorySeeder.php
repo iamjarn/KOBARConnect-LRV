@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
             ['name'=>'Religi'],
             ['name'=>'Kuliner'],
             ['name'=>'Edukasi'],
-            ['name'=>'Sejarah'],
+            ['name'=>'Sejarah']
         ];
         DB::table('category')->insert($data);
     }

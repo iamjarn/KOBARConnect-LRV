@@ -107,8 +107,8 @@ class UserController extends Controller
     // KTDatatables
     public function index()
     {
-        $page_title = 'List User';
-        $page_description = 'This is KTdatatables test page';
+        $page_title = 'This is our administrators';
+        $page_description = 'Berikut adalah administrator yang terdaftar dalam pengaturan konten untuk aplikasi ini';
 
         return view('pages.list_user', compact('page_title', 'page_description'));
     }
@@ -118,7 +118,7 @@ class UserController extends Controller
         $pagination = $request->get("pagination");
         $limit = $pagination["perpage"] ?? 10;
         $current_page = $pagination["page"];
-        $total_page = $pagination["pages"];
+        $total_page = $pagination["page"];
 
         $total_data = User::count();
         $users = User::with('roles')
@@ -144,4 +144,8 @@ class UserController extends Controller
             "data"=> $users
         ]);
     }
+    public function users(Request $request){
+        $result = User::all();
+        return response()->json($result);
+}
 }

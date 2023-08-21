@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Category extends Model
 {
     protected $table = "category";
     protected $guarded = [];
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $casts = [
         "is_enable_ticket"  => 'boolean'

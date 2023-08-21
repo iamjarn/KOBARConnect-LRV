@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Head-->
 	<head><base href="../../../../">
 		<meta charset="utf-8" />
-		<title>Kobar | Login Page</title>
+		<title>KOBAR Connect | Login Admin</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -37,7 +37,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="{{asset('/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="{{asset('/media/logos/favicon.ico')}}" />
+		<link rel="shortcut icon" href="{{asset('/media/logos/Logo-Kotawaringin-Barat-INDONESIA-Warna.png')}}" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -51,15 +51,15 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!--begin::Login Header-->
 						<div class="d-flex flex-center mb-15">
 							<a href="#">
-								<img src="{{asset('/media/logos/kobar.png')}}" class="max-h-75px" alt="" />
+								<img src="{{asset('/media/logos/KOBAR Connect (Draft 2).png')}}" class="max-h-75px" alt="" />
 							</a>
 						</div>
 						<!--end::Login Header-->
 						<!--begin::Login Sign in form-->
 						<div class="login-signin">
 							<div class="mb-20">
-								<h3>Sign In To Admin</h3>
-								<div class="text-muted font-weight-bold">Enter your details to login to your account:</div>
+								<h3>Selamat Datang, Administrator</h3>
+								<div class="text-muted font-weight-bold">Silahkan login dahulu untuk mengelola data dalam aplikasi KOBAR Connect</div>
 							</div>
 							<form class="form" method="POST" action="{{url('login')}}">
                                 @csrf

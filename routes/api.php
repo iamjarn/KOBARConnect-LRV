@@ -21,6 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("contents", "ContentController@contents");
 Route::get("recommends", "TourController@recommends");
 Route::get("tours", "TourController@tours");
+Route::get("users", "UserController@users");
+Route::get("categories", "TourController@get_categories");
 Route::post("tour/{tour_id}/transaction", "TourController@create_transaction");
 Route::post("notification", "TourController@handleNotification");
 

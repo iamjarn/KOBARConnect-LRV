@@ -1,13 +1,13 @@
 {{-- Aside --}}
 
 @php
-    $kt_logo_image = 'kobar.png';
+    $kt_logo_image = 'kobar(2).png';
 @endphp
 
 @if (config('layout.brand.self.theme') === 'light')
     @php $kt_logo_image = 'kobar.png' @endphp
 @elseif (config('layout.brand.self.theme') === 'dark')
-    @php $kt_logo_image = 'kobar.png' @endphp
+    @php $kt_logo_image = 'kobar(2).png' @endphp
 @endif
 
 <div class="aside aside-left {{ Metronic::printClasses('aside', false) }} d-flex flex-column flex-row-auto" id="kt_aside">
